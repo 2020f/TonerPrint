@@ -14,6 +14,7 @@ export interface Product {
   type: ProductType
   price: number
   oldPrice?: number
+  imageUrl?: string
   emoji: string
   badge: ProductBadge
   description: string

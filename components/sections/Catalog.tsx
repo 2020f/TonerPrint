@@ -16,6 +16,7 @@ function mapProduct(p: any): Product {
     type: p.type,
     price: Number(p.price),
     oldPrice: p.old_price ? Number(p.old_price) : undefined,
+    imageUrl: p.image_url || undefined,
     emoji: p.emoji || '🖨️',
     badge: p.badge || null,
     description: p.description || '',
