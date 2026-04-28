@@ -1,0 +1,58 @@
+import { Testimonial } from '@/types'
+
+export const testimonials: Testimonial[] = [
+  {
+    id: 1,
+    name: 'María González',
+    role: 'Gerente Administrativa',
+    company: 'Oficina Legal González & Asociados',
+    avatar: '👩‍💼',
+    rating: 5,
+    text: 'TonerPrint ha sido nuestro proveedor de insumos por más de 3 años. La calidad de los tóneres es excelente y el servicio de entrega es puntual. Nunca hemos tenido problemas con sus productos originales.',
+  },
+  {
+    id: 2,
+    name: 'Carlos Mejía',
+    role: 'Propietario',
+    company: 'Imprenta Rápida Mejía',
+    avatar: '👨‍💻',
+    rating: 5,
+    text: 'Compro tintas Epson y Canon para mi negocio de impresión. El precio es competitivo y los productos son siempre originales. El equipo de TonerPrint siempre me asesora cuando tengo dudas sobre compatibilidad.',
+  },
+  {
+    id: 3,
+    name: 'Ana Rodríguez',
+    role: 'Directora',
+    company: 'Colegio Privado San Pedro',
+    avatar: '👩‍🏫',
+    rating: 5,
+    text: 'Excelente servicio al cliente. Pedí 10 tóneres HP para el colegio y llegaron al día siguiente en perfecto estado. Los precios son los mejores del mercado. Totalmente recomendados para instituciones educativas.',
+  },
+  {
+    id: 4,
+    name: 'Roberto Marte',
+    role: 'Contador Público',
+    company: 'Despacho Contable Marte',
+    avatar: '👨‍💼',
+    rating: 4,
+    text: 'Muy buena experiencia comprando en TonerPrint. El proceso fue sencillo y el seguimiento del pedido excelente. Los cartuchos HP originales que compré funcionan perfectamente con mi impresora. Los recomiendo.',
+  },
+  {
+    id: 5,
+    name: 'Luisa Fernández',
+    role: 'Diseñadora Gráfica',
+    company: 'Studio LF Design',
+    avatar: '👩‍🎨',
+    rating: 5,
+    text: 'Trabajo con impresoras de alta calidad y necesito tintas que rindan. Las tintas Epson y Canon que compro aquí son auténticas y los colores quedan perfectos. El pack de 4 colores T664 es una excelente opción.',
+  },
+  {
+    id: 6,
+    name: 'Emmanuel Díaz',
+    role: 'Gerente de IT',
+    company: 'Corporación Díaz & Hnos.',
+    avatar: '👨‍💻',
+    rating: 5,
+    text: 'Gestionamos más de 50 impresoras en nuestra corporación. TonerPrint nos da precios especiales por volumen y el soporte técnico es excelente. La impresora HP LaserJet que compramos hace 6 meses funciona perfectamente.',
+  },
+]

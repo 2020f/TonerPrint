@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TonerPrint — Soluciones de Impresión en República Dominicana</title>
+  <meta name="description" content="TonerPrint: tóneres, tintas e impresoras HP, Epson, Canon, Brother al mejor precio en República Dominicana. Envíos rápidos y soporte técnico especializado.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pink: #E91E63;
+      --pink2: #F06292;
+      --black: #0D0D0D;
+      --dark: #333333;
+      --light: #F5F5F5;
+      --white: #FFFFFF;
+      --blue: #4FC3F7;
+      --orange: #FF7043;
+      --radius: 14px;
+      --tr: all 0.28s ease;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Poppins',sans-serif;color:var(--dark);background:var(--white);overflow-x:hidden;}
+
+    /* ── HEADER ── */
+    .top-bar{background:var(--pink);text-align:center;padding:7px 16px;font-size:.73rem;color:#fff;font-weight:500;letter-spacing:.3px;}
+    header{position:fixed;top:0;width:100%;z-index:1000;background:rgba(13,13,13,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(233,30,99,.25);transition:var(--tr);}
+    .nav-wrap{max-width:1380px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:20px;}
+    .logo{font-size:1.55rem;font-weight:900;color:#fff;text-decoration:none;flex-shrink:0;letter-spacing:-1px;}
+    .logo span{color:var(--pink);}
+    .logo small{display:block;font-size:.42rem;font-weight:400;color:rgba(255,255,255,.4);letter-spacing:3px;text-transform:uppercase;margin-top:-2px;}
+    .search-wrap{flex:1;max-width:480px;display:flex;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:50px;overflow:hidden;}
+    .search-wrap input{flex:1;padding:9px 18px;background:none;border:none;color:#fff;font-family:'Poppins',sans-serif;font-size:.83rem;outline:none;}
+    .search-wrap input::placeholder{color:rgba(255,255,255,.35);}
+    .search-wrap button{padding:9px 18px;background:var(--pink);border:none;color:#fff;cursor:pointer;font-size:.95rem;transition:var(--tr);}
+    .search-wrap button:hover{background:#c2185b;}
+    nav{display:flex;gap:2px;}
+    nav a{color:rgba(255,255,255,.7);text-decoration:none;padding:8px 13px;border-radius:8px;font-size:.83rem;font-weight:500;transition:var(--tr);white-space:nowrap;}
+    nav a:hover{color:#fff;background:rgba(233,30,99,.18);}
+    .cart-btn{position:relative;background:var(--pink);border:none;color:#fff;padding:9px 18px;border-radius:50px;cursor:pointer;font-family:'Poppins',sans-serif;font-weight:700;font-size:.83rem;display:flex;align-items:center;gap:7px;transition:var(--tr);flex-shrink:0;}
+    .cart-btn:hover{background:#c2185b;transform:translateY(-1px);}
+    .cart-count{background:#fff;color:var(--pink);border-radius:50%;width:19px;height:19px;font-size:.67rem;font-weight:800;display:flex;align-items:center;justify-content:center;}
+    .hamburger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:4px;}
+    .hamburger span{display:block;width:23px;height:2px;background:#fff;border-radius:2px;transition:var(--tr);}
+
+    /* ── HERO ── */
+    .hero{min-height:100vh;background:linear-gradient(140deg,#0D0D0D 0%,#1a0a11 60%,#0D0D0D 100%);display:flex;align-items:center;padding-top:90px;position:relative;overflow:hidden;}
+    .hero::before{content:'';position:absolute;width:700px;height:700px;background:radial-gradient(circle,rgba(233,30,99,.13) 0%,transparent 68%);top:50%;right:5%;transform:translateY(-50%);pointer-events:none;}
+    .hero::after{content:'';position:absolute;width:350px;height:350px;background:radial-gradient(circle,rgba(79,195,247,.07) 0%,transparent 70%);bottom:8%;left:3%;pointer-events:none;}
+    .hero-in{max-width:1380px;margin:0 auto;padding:80px 24px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+    .hero-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(233,30,99,.14);border:1px solid rgba(233,30,99,.3);color:var(--pink2);padding:5px 15px;border-radius:50px;font-size:.75rem;font-weight:700;margin-bottom:22px;letter-spacing:.5px;animation:fadeUp .6s ease .1s both;}
+    .hero h1{font-size:clamp(2rem,3.8vw,3.3rem);font-weight:900;color:#fff;line-height:1.14;margin-bottom:18px;animation:fadeUp .6s ease .2s both;}
+    .hero h1 em{color:var(--pink);font-style:normal;}
+    .hero p{color:rgba(255,255,255,.58);font-size:1rem;line-height:1.75;margin-bottom:34px;max-width:470px;animation:fadeUp .6s ease .35s both;}
+    .hero-btns{display:flex;gap:14px;flex-wrap:wrap;animation:fadeUp .6s ease .5s both;}
+    .btn-p{background:var(--pink);color:#fff;padding:13px 30px;border-radius:50px;border:none;font-family:'Poppins',sans-serif;font-weight:700;font-size:.9rem;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:7px;transition:var(--tr);}
+    .btn-p:hover{background:#c2185b;transform:translateY(-2px);box-shadow:0 8px 24px rgba(233,30,99,.4);}
+    .btn-o{background:transparent;color:#fff;padding:13px 30px;border-radius:50px;border:1px solid rgba(255,255,255,.28);font-family:'Poppins',sans-serif;font-weight:700;font-size:.9rem;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:7px;transition:var(--tr);}
+    .btn-o:hover{border-color:var(--pink);color:var(--pink);transform:translateY(-2px);}
+    .benefits{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:44px;animation:fadeUp .6s ease .65s both;}
+    .benefit{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.72);font-size:.82rem;}
+    .bi{width:34px;height:34px;background:rgba(233,30,99,.14);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0;}
+    .hero-vis{position:relative;display:flex;justify-content:center;align-items:center;animation:fadeUp .8s ease .3s both;}
+    .hero-box{width:100%;max-width:500px;aspect-ratio:1;background:linear-gradient(135deg,rgba(233,30,99,.09),rgba(79,195,247,.04));border-radius:28px;border:1px solid rgba(233,30,99,.18);display:flex;align-items:center;justify-content:center;font-size:10rem;position:relative;overflow:hidden;}
+    .float-card{position:absolute;background:rgba(255,255,255,.08);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.13);border-radius:12px;padding:11px 15px;color:#fff;font-size:.75rem;font-weight:600;}
+    .float-card .fv{font-size:1.3rem;font-weight:900;color:var(--pink);display:block;}
+    .fc1{top:8%;left:-6%;animation:fl1 4s ease-in-out infinite;}
+    .fc2{bottom:12%;right:-5%;animation:fl2 4s ease-in-out infinite 1.2s;}
+    @keyframes fl1{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+    @keyframes fl2{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+
+    /* ── PROMO TICKER ── */
+    .promo-bar{background:linear-gradient(90deg,var(--pink),#c2185b,var(--orange),var(--pink));background-size:300%;animation:gradShift 5s linear infinite;padding:12px 0;overflow:hidden;white-space:nowrap;}
+    @keyframes gradShift{0%{background-position:0%}100%{background-position:300%}}
+    .ticker{display:inline-flex;gap:70px;animation:tick 22s linear infinite;}
+    .tick-item{color:#fff;font-weight:600;font-size:.83rem;display:inline-flex;align-items:center;gap:7px;}
+    @keyframes tick{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
+    /* ── SECTION BASE ── */
+    section{padding:84px 24px;}
+    .wrap{max-width:1380px;margin:0 auto;}
+    .sec-head{text-align:center;margin-bottom:56px;}
+    .sec-tag{display:inline-block;background:rgba(233,30,99,.1);color:var(--pink);padding:4px 15px;border-radius:50px;font-size:.73rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;}
+    .sec-title{font-size:clamp(1.7rem,2.8vw,2.6rem);font-weight:900;color:var(--black);margin-bottom:14px;}
+    .sec-sub{color:#888;font-size:.95rem;max-width:490px;margin:0 auto;line-height:1.72;}
+
+    /* ── CATALOG ── */
+    #catalogo{background:var(--light);}
+    .filter-bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:32px;}
+    .filter-div{width:1px;height:30px;background:#ccc;flex-shrink:0;}
+    .fb{padding:7px 18px;border-radius:50px;border:1.5px solid #d0d0d0;background:#fff;color:var(--dark);font-family:'Poppins',sans-serif;font-size:.77rem;font-weight:600;cursor:pointer;transition:var(--tr);}
+    .fb:hover,.fb.active{background:var(--pink);border-color:var(--pink);color:#fff;}
+    .prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:22px;}
+    .prod-card{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:0 2px 14px rgba(0,0,0,.06);transition:var(--tr);cursor:pointer;position:relative;}
+    .prod-card:hover{transform:translateY(-6px);box-shadow:0 14px 40px rgba(233,30,99,.14);}
+    .p-badge{position:absolute;top:11px;left:11px;padding:3px 10px;border-radius:50px;font-size:.67rem;font-weight:800;z-index:2;color:#fff;}
+    .p-badge.sale{background:var(--orange);}
+    .p-badge.hot{background:var(--pink);}
+    .p-badge.new{background:var(--blue);color:var(--black);}
+    .p-img{width:100%;aspect-ratio:1;background:var(--light);display:flex;align-items:center;justify-content:center;font-size:5rem;}
+    .p-info{padding:15px;}
+    .p-brand{font-size:.67rem;font-weight:800;color:var(--pink);text-transform:uppercase;letter-spacing:1.2px;margin-bottom:3px;}
+    .p-name{font-size:.88rem;font-weight:700;color:var(--black);margin-bottom:6px;line-height:1.38;}
+    .p-type{font-size:.72rem;color:#999;margin-bottom:10px;}
+    .p-foot{display:flex;align-items:center;justify-content:space-between;}
+    .p-price{font-size:1.15rem;font-weight:900;color:var(--black);}
+    .p-price .cur{font-size:.7rem;font-weight:600;color:#999;}
+    .p-price .old{font-size:.7rem;color:#bbb;text-decoration:line-through;font-weight:400;display:block;}
+    .add-btn{width:37px;height:37px;border-radius:50%;background:var(--pink);border:none;color:#fff;font-size:1.15rem;cursor:pointer;transition:var(--tr);display:flex;align-items:center;justify-content:center;font-weight:700;}
+    .add-btn:hover{background:#c2185b;transform:scale(1.12);}
+    .no-res{grid-column:1/-1;text-align:center;padding:60px;color:#aaa;}
+
+    /* ── MODAL OVERLAY ── */
+    .overlay{position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:2000;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .28s ease;}
+    .overlay.open{opacity:1;pointer-events:all;}
+    .modal{background:#fff;border-radius:22px;max-width:860px;width:100%;max-height:90vh;overflow-y:auto;transform:scale(.92) translateY(18px);transition:transform .28s ease;}
+    .overlay.open .modal{transform:scale(1) translateY(0);}
+    .m-head{display:flex;justify-content:space-between;align-items:center;padding:18px 22px;border-bottom:1px solid #eee;position:sticky;top:0;background:#fff;z-index:1;border-radius:22px 22px 0 0;}
+    .m-head h3{font-size:1rem;font-weight:800;}
+    .m-close{width:34px;height:34px;border-radius:50%;border:none;background:var(--light);cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;transition:var(--tr);}
+    .m-close:hover{background:#e0e0e0;}
+    .m-body{padding:22px;display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+    .m-img{width:100%;aspect-ratio:1;background:var(--light);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:7rem;}
+    .m-brand{font-size:.7rem;font-weight:800;color:var(--pink);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;}
+    .m-name{font-size:1.4rem;font-weight:900;color:var(--black);margin-bottom:10px;line-height:1.25;}
+    .m-price{font-size:1.9rem;font-weight:900;color:var(--pink);margin-bottom:7px;}
+    .m-avail{display:inline-flex;align-items:center;gap:6px;color:#2e7d32;font-size:.82rem;font-weight:700;margin-bottom:18px;}
+    .m-desc{color:#666;font-size:.87rem;line-height:1.72;margin-bottom:18px;}
+    .m-specs{background:var(--light);border-radius:12px;padding:15px;margin-bottom:18px;}
+    .m-specs h4{font-size:.82rem;font-weight:800;margin-bottom:11px;}
+    .spec-row{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid rgba(0,0,0,.06);font-size:.8rem;}
+    .spec-row:last-child{border-bottom:none;}
+    .sl{color:#888;}.sv{font-weight:700;color:var(--dark);}
+    .qty-wrap{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+    .qty-btn{width:34px;height:34px;border-radius:50%;border:1.5px solid #ddd;background:#fff;font-size:1rem;cursor:pointer;transition:var(--tr);display:flex;align-items:center;justify-content:center;font-weight:700;}
+    .qty-btn:hover{border-color:var(--pink);color:var(--pink);}
+    .qty-val{font-size:1.05rem;font-weight:800;min-width:28px;text-align:center;}
+    .m-add-btn{width:100%;padding:13px;background:var(--pink);color:#fff;border:none;border-radius:50px;font-family:'Poppins',sans-serif;font-size:.95rem;font-weight:800;cursor:pointer;transition:var(--tr);}
+    .m-add-btn:hover{background:#c2185b;transform:translateY(-2px);box-shadow:0 8px 22px rgba(233,30,99,.3);}
+
+    /* ── CART SIDEBAR ── */
+    .s-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:2999;opacity:0;pointer-events:none;transition:opacity .28s ease;}
+    .s-overlay.open{opacity:1;pointer-events:all;}
+    .cart-side{position:fixed;top:0;right:0;height:100%;width:390px;max-width:100%;background:#fff;z-index:3000;box-shadow:-6px 0 40px rgba(0,0,0,.15);transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;}
+    .cart-side.open{transform:translateX(0);}
+    .c-head{padding:18px 22px;border-bottom:1px solid #eee;display:flex;justify-content:space-between;align-items:center;}
+    .c-head h3{font-size:1.05rem;font-weight:800;}
+    .c-items{flex:1;overflow-y:auto;padding:14px 22px;}
+    .c-empty{text-align:center;padding:56px 16px;color:#aaa;}
+    .c-empty .ei{font-size:2.8rem;margin-bottom:11px;}
+    .c-item{display:flex;gap:13px;padding:13px 0;border-bottom:1px solid #f0f0f0;}
+    .ci-img{width:60px;height:60px;background:var(--light);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.7rem;flex-shrink:0;}
+    .ci-info{flex:1;}
+    .ci-name{font-size:.82rem;font-weight:700;color:var(--black);margin-bottom:4px;line-height:1.3;}
+    .ci-price{font-size:.88rem;font-weight:800;color:var(--pink);}
+    .ci-rm{background:none;border:none;color:#bbb;cursor:pointer;font-size:1rem;transition:var(--tr);padding:4px;border-radius:6px;}
+    .ci-rm:hover{color:var(--pink);background:rgba(233,30,99,.08);}
+    .c-foot{padding:18px 22px;border-top:1px solid #eee;background:#fff;}
+    .c-total{display:flex;justify-content:space-between;font-size:1.05rem;font-weight:900;margin-bottom:14px;}
+    .c-checkout{width:100%;padding:13px;background:var(--pink);color:#fff;border:none;border-radius:50px;font-family:'Poppins',sans-serif;font-size:.95rem;font-weight:800;cursor:pointer;transition:var(--tr);}
+    .c-checkout:hover{background:#c2185b;box-shadow:0 6px 20px rgba(233,30,99,.35);}
+
+    /* ── CHECKOUT MODAL ── */
+    .co-modal{max-width:580px;}
+    .form-g{margin-bottom:16px;}
+    .form-g label{display:block;font-size:.78rem;font-weight:700;color:var(--dark);margin-bottom:5px;}
+    .form-g input,.form-g select,.form-g textarea{width:100%;padding:11px 15px;border:1.5px solid #e0e0e0;border-radius:10px;font-family:'Poppins',sans-serif;font-size:.87rem;color:var(--dark);transition:var(--tr);outline:none;background:#fff;}
+    .form-g input:focus,.form-g select:focus,.form-g textarea:focus{border-color:var(--pink);box-shadow:0 0 0 3px rgba(233,30,99,.08);}
+    .f-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+    .pay-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:7px;}
+    .pay-opt{border:2px solid #e0e0e0;border-radius:12px;padding:13px 10px;text-align:center;cursor:pointer;transition:var(--tr);}
+    .pay-opt:hover{border-color:var(--pink2);}
+    .pay-opt.sel{border-color:var(--pink);background:rgba(233,30,99,.04);}
+    .pay-opt .pi{font-size:1.4rem;margin-bottom:5px;}
+    .pay-opt .pl{font-size:.7rem;font-weight:700;color:var(--dark);}
+    .co-submit{width:100%;padding:14px;background:var(--pink);color:#fff;border:none;border-radius:50px;font-family:'Poppins',sans-serif;font-size:.97rem;font-weight:800;cursor:pointer;transition:var(--tr);margin-top:6px;}
+    .co-submit:hover{background:#c2185b;box-shadow:0 6px 20px rgba(233,30,99,.35);}
+    .order-ok{text-align:center;padding:44px 24px;display:none;}
+    .ok-icon{font-size:3.8rem;margin-bottom:14px;animation:pop .5s cubic-bezier(.175,.885,.32,1.275);}
+    @keyframes pop{from{transform:scale(0);}to{transform:scale(1);}}
+
+    /* ── SERVICES ── */
+    #servicios{background:var(--black);}
+    #servicios .sec-title{color:#fff;}
+    .srv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:22px;}
+    .srv-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:20px;padding:30px 22px;transition:var(--tr);}
+    .srv-card:hover{background:rgba(233,30,99,.08);border-color:rgba(233,30,99,.28);transform:translateY(-4px);}
+    .srv-icon{font-size:2.3rem;margin-bottom:18px;display:block;}
+    .srv-card h3{color:#fff;font-size:1.05rem;font-weight:800;margin-bottom:9px;}
+    .srv-card p{color:rgba(255,255,255,.48);font-size:.84rem;line-height:1.72;}
+
+    /* ── TESTIMONIALS ── */
+    #testimonios{background:var(--light);}
+    .tes-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:22px;}
+    .tes-card{background:#fff;border-radius:20px;padding:26px;box-shadow:0 2px 16px rgba(0,0,0,.06);transition:var(--tr);}
+    .tes-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(233,30,99,.1);}
+    .stars{color:#FFB300;font-size:.88rem;margin-bottom:13px;}
+    .tes-txt{color:#555;font-size:.87rem;line-height:1.72;margin-bottom:18px;font-style:italic;}
+    .tes-author{display:flex;align-items:center;gap:11px;}
+    .t-avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--blue));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:.95rem;flex-shrink:0;}
+    .t-name{font-weight:800;font-size:.87rem;color:var(--black);}
+    .t-role{font-size:.72rem;color:#888;}
+
+    /* ── ABOUT ── */
+    #nosotros{background:#fff;}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+    .about-vis{background:linear-gradient(135deg,var(--pink),#c2185b);border-radius:24px;padding:44px;color:#fff;}
+    .about-vis h3{font-size:1.3rem;font-weight:900;margin-bottom:7px;}
+    .about-vis p{opacity:.78;font-size:.85rem;margin-bottom:22px;}
+    .stats-g{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+    .stat-item{text-align:center;padding:18px;background:rgba(255,255,255,.1);border-radius:14px;}
+    .stat-v{font-size:2.3rem;font-weight:900;display:block;}
+    .stat-l{font-size:.75rem;opacity:.78;}
+    .about-txt h2{font-size:clamp(1.7rem,2.5vw,2.2rem);font-weight:900;color:var(--black);margin-bottom:18px;line-height:1.22;}
+    .about-txt p{color:#666;line-height:1.8;margin-bottom:18px;font-size:.92rem;}
+    .mv-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px;}
+    .mv-card{background:var(--light);border-radius:14px;padding:18px;border-left:3px solid var(--pink);}
+    .mv-card h4{font-size:.78rem;font-weight:800;color:var(--pink);text-transform:uppercase;letter-spacing:1px;margin-bottom:7px;}
+    .mv-card p{font-size:.8rem;color:#666;line-height:1.6;margin:0;}
+
+    /* ── CONTACT ── */
+    #contacto{background:var(--black);}
+    #contacto .sec-title{color:#fff;}
+    #contacto .sec-sub{color:rgba(255,255,255,.45);}
+    .con-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;}
+    .con-info{display:flex;flex-direction:column;gap:22px;}
+    .con-item{display:flex;gap:15px;align-items:flex-start;}
+    .con-icon{width:46px;height:46px;background:rgba(233,30,99,.14);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;border:1px solid rgba(233,30,99,.28);}
+    .con-item h4{color:#fff;font-size:.84rem;font-weight:800;margin-bottom:3px;}
+    .con-item p,.con-item a{color:rgba(255,255,255,.48);font-size:.84rem;text-decoration:none;transition:var(--tr);}
+    .con-item a:hover{color:var(--pink);}
+    .dark-form input,.dark-form textarea{background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.1);color:#fff;}
+    .dark-form input::placeholder,.dark-form textarea::placeholder{color:rgba(255,255,255,.3);}
+    .dark-form input:focus,.dark-form textarea:focus{border-color:var(--pink);background:rgba(255,255,255,.08);}
+    .dark-form label{color:rgba(255,255,255,.65);}
+    .map-wrap{border-radius:14px;overflow:hidden;height:190px;margin-top:18px;border:1px solid rgba(255,255,255,.08);}
+    .map-wrap iframe{width:100%;height:100%;border:none;filter:grayscale(20%) invert(88%) hue-rotate(180deg);}
+
+    /* ── FOOTER ── */
+    footer{background:#070707;padding:56px 24px 22px;border-top:1px solid rgba(255,255,255,.05);}
+    .ft-grid{max-width:1380px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px;}
+    .ft-brand p{color:rgba(255,255,255,.38);font-size:.82rem;line-height:1.72;margin:14px 0 22px;}
+    .social-links{display:flex;gap:9px;}
+    .soc{width:36px;height:36px;background:rgba(255,255,255,.05);border-radius:9px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.45);text-decoration:none;font-size:.95rem;transition:var(--tr);border:1px solid rgba(255,255,255,.07);}
+    .soc:hover{background:var(--pink);color:#fff;border-color:var(--pink);}
+    .ft-col h4{color:#fff;font-size:.87rem;font-weight:800;margin-bottom:18px;}
+    .ft-col ul{list-style:none;display:flex;flex-direction:column;gap:9px;}
+    .ft-col ul li a{color:rgba(255,255,255,.38);text-decoration:none;font-size:.82rem;transition:var(--tr);}
+    .ft-col ul li a:hover{color:var(--pink);padding-left:4px;}
+    .ft-bottom{max-width:1380px;margin:0 auto;padding-top:22px;border-top:1px solid rgba(255,255,255,.05);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+    .ft-bottom p{color:rgba(255,255,255,.22);font-size:.77rem;}
+
+    /* ── WHATSAPP ── */
+    .wa-btn{position:fixed;bottom:26px;right:26px;width:54px;height:54px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;text-decoration:none;z-index:998;animation:waPulse 2.5s ease-in-out infinite;transition:var(--tr);}
+    .wa-btn:hover{transform:scale(1.1);}
+    @keyframes waPulse{0%,100%{box-shadow:0 4px 18px rgba(37,211,102,.4),0 0 0 0 rgba(37,211,102,.28);}50%{box-shadow:0 4px 18px rgba(37,211,102,.4),0 0 0 11px rgba(37,211,102,0);}}
+
+    /* ── TOAST ── */
+    .toast-wrap{position:fixed;top:86px;right:22px;z-index:9999;display:flex;flex-direction:column;gap:9px;}
+    .toast{background:#fff;border-radius:12px;padding:13px 17px;display:flex;align-items:center;gap:11px;box-shadow:0 8px 28px rgba(0,0,0,.11);border-left:3px solid var(--pink);min-width:270px;max-width:330px;animation:toastIn .32s cubic-bezier(.175,.885,.32,1.275);}
+    .toast.out{animation:toastOut .28s ease forwards;}
+    @keyframes toastIn{from{transform:translateX(110%);opacity:0;}to{transform:translateX(0);opacity:1;}}
+    @keyframes toastOut{from{transform:translateX(0);opacity:1;}to{transform:translateX(115%);opacity:0;}}
+    .toast-txt{font-size:.82rem;font-weight:700;}
+
+    /* ── REVEAL ── */
+    .rv{opacity:0;transform:translateY(26px);transition:opacity .58s ease,transform .58s ease;}
+    .rv.vis{opacity:1;transform:translateY(0);}
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:1024px){
+      nav{display:none;}
+      nav.mob{display:flex;flex-direction:column;position:fixed;inset:0;background:rgba(13,13,13,.98);z-index:999;align-items:center;justify-content:center;gap:6px;}
+      .hamburger{display:flex;}
+    }
+    @media(max-width:768px){
+      .hero-in{grid-template-columns:1fr;}
+      .hero-vis{display:none;}
+      .about-grid,.con-grid{grid-template-columns:1fr;}
+      .m-body{grid-template-columns:1fr;}
+      .f-row{grid-template-columns:1fr;}
+      .search-wrap{display:none;}
+      .benefits{grid-template-columns:1fr;}
+      .mv-grid{grid-template-columns:1fr;}
+      .ft-grid{grid-template-columns:1fr 1fr;}
+    }
+    @media(max-width:480px){
+      section{padding:60px 16px;}
+      .nav-wrap{padding:12px 16px;}
+      .prod-grid{grid-template-columns:1fr 1fr;gap:11px;}
+      .pay-grid{grid-template-columns:1fr;}
+      .ft-grid{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOASTS -->
+<div class="toast-wrap" id="toasts"></div>
+
+<!-- HEADER -->
+<header id="hdr">
+  <div class="top-bar">🚚 Envíos a toda República Dominicana &nbsp;·&nbsp; ✅ Garantía en todos los productos &nbsp;·&nbsp; 📞 (809) 555-0100</div>
+  <div class="nav-wrap">
+    <a href="#inicio" class="logo">Toner<span>Print</span><small>República Dominicana</small></a>
+    <div class="search-wrap">
+      <input type="text" id="srch" placeholder="Buscar tóner, tinta, impresora…">
+      <button onclick="doSearch()">🔍</button>
+    </div>
+    <nav id="nav">
+      <a href="#inicio">Inicio</a>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:11px;flex-shrink:0;">
+      <button class="cart-btn" onclick="toggleCart()">🛒<span class="cart-count" id="cCount">0</span></button>
+      <button class="hamburger" id="hburg" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="inicio" class="hero">
+  <div class="hero-in">
+    <div>
+      <div class="hero-badge">🏆 Líderes en impresión en RD</div>
+      <h1>Soluciones completas en <em>impresión</em> en República Dominicana</h1>
+      <p>Tóneres, tintas e impresoras de las mejores marcas. Calidad garantizada, precios imbatibles y el mejor soporte técnico del país.</p>
+      <div class="hero-btns">
+        <a href="#catalogo" class="btn-p">🛒 Ver catálogo</a>
+        <a href="#contacto" class="btn-o">📞 Contáctanos</a>
+      </div>
+      <div class="benefits">
+        <div class="benefit"><div class="bi">🚀</div><span>Envíos rápidos a todo RD</span></div>
+        <div class="benefit"><div class="bi">✅</div><span>Garantía en todos los productos</span></div>
+        <div class="benefit"><div class="bi">🔧</div><span>Soporte técnico especializado</span></div>
+        <div class="benefit"><div class="bi">💯</div><span>Originales y compatibles</span></div>
+      </div>
+    </div>
+    <div class="hero-vis">
+      <div class="hero-box">
+        🖨️
+        <div class="float-card fc1"><span class="fv">+5,000</span>Productos en stock</div>
+        <div class="float-card fc2"><span class="fv">98%</span>Clientes satisfechos</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROMO TICKER -->
+<div class="promo-bar">
+  <div class="ticker">
+    <span class="tick-item">🔥 20% OFF en tóneres HP esta semana</span>
+    <span class="tick-item">📦 Envío GRATIS en compras mayores a RD$3,000</span>
+    <span class="tick-item">⚡ Tinta Epson T664 Pack 4 colores desde RD$890</span>
+    <span class="tick-item">🖨️ Impresoras Canon PIXMA con descuento especial</span>
+    <span class="tick-item">💳 Paga en cuotas sin intereses</span>
+    <span class="tick-item">🔥 20% OFF en tóneres HP esta semana</span>
+    <span class="tick-item">📦 Envío GRATIS en compras mayores a RD$3,000</span>
+    <span class="tick-item">⚡ Tinta Epson T664 Pack 4 colores desde RD$890</span>
+    <span class="tick-item">🖨️ Impresoras Canon PIXMA con descuento especial</span>
+    <span class="tick-item">💳 Paga en cuotas sin intereses</span>
+  </div>
+</div>
+
+<!-- CATALOG -->
+<section id="catalogo">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="sec-tag">Catálogo</div>
+      <h2 class="sec-title">Nuestros Productos</h2>
+      <p class="sec-sub">Las mejores marcas al mejor precio. Originales y compatibles con garantía.</p>
+    </div>
+    <div class="filter-bar rv">
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <button class="fb active" onclick="fAll(this)">Todos</button>
+      </div>
+      <div class="filter-div"></div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;" id="bFilters">
+        <button class="fb" onclick="fBrand('hp',this)">HP</button>
+        <button class="fb" onclick="fBrand('epson',this)">Epson</button>
+        <button class="fb" onclick="fBrand('canon',this)">Canon</button>
+        <button class="fb" onclick="fBrand('brother',this)">Brother</button>
+      </div>
+      <div class="filter-div"></div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;" id="tFilters">
+        <button class="fb" onclick="fType('toner',this)">Tóner</button>
+        <button class="fb" onclick="fType('tinta',this)">Tinta</button>
+        <button class="fb" onclick="fType('impresora',this)">Impresoras</button>
+        <button class="fb" onclick="fType('accesorio',this)">Accesorios</button>
+      </div>
+    </div>
+    <div class="prod-grid" id="prodGrid"></div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="servicios">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="sec-tag" style="background:rgba(233,30,99,.2);color:#F06292;">Servicios</div>
+      <h2 class="sec-title">¿Qué ofrecemos?</h2>
+    </div>
+    <div class="srv-grid">
+      <div class="srv-card rv"><span class="srv-icon">🖨️</span><h3>Venta de Equipos</h3><p>Impresoras HP, Epson, Canon y Brother nuevas con garantía oficial. Asesoría personalizada para elegir el equipo ideal para tu negocio o hogar.</p></div>
+      <div class="srv-card rv"><span class="srv-icon">🔧</span><h3>Mantenimiento</h3><p>Mantenimiento preventivo y correctivo para todo tipo de impresoras. Técnicos certificados con respuesta rápida y servicio a domicilio en Santo Domingo.</p></div>
+      <div class="srv-card rv"><span class="srv-icon">💬</span><h3>Soporte Técnico</h3><p>Asistencia técnica presencial y remota. Resolvemos problemas de conectividad, drivers, calibración de color y configuración de red empresarial.</p></div>
+      <div class="srv-card rv"><span class="srv-icon">♻️</span><h3>Recarga de Tóner</h3><p>Recarga profesional con insumos de alta calidad. Ahorra hasta 60% vs. comprar un tóner nuevo sin sacrificar la calidad de impresión.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonios">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="sec-tag">Testimonios</div>
+      <h2 class="sec-title">Lo que dicen nuestros clientes</h2>
+      <p class="sec-sub">Más de 15 años sirviendo a empresas y hogares en toda República Dominicana.</p>
+    </div>
+    <div class="tes-grid" id="tesGrid"></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="nosotros">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-vis rv">
+        <h3>Líderes en Impresión</h3>
+        <p>Más de una década sirviendo a República Dominicana con los mejores productos y servicios de impresión.</p>
+        <div class="stats-g">
+          <div class="stat-item"><span class="stat-v">+15</span><span class="stat-l">Años de experiencia</span></div>
+          <div class="stat-item"><span class="stat-v">+8K</span><span class="stat-l">Clientes satisfechos</span></div>
+          <div class="stat-item"><span class="stat-v">+5K</span><span class="stat-l">Productos disponibles</span></div>
+          <div class="stat-item"><span class="stat-v">98%</span><span class="stat-l">Índice de satisfacción</span></div>
+        </div>
+      </div>
+      <div class="about-txt rv">
+        <h2>La empresa líder en soluciones de impresión en República Dominicana</h2>
+        <p>TonerPrint nació con la visión de ofrecer a empresas y personas los mejores productos de impresión al mejor precio. Desde nuestros inicios nos hemos consolidado como el referente nacional en tóneres, tintas e impresoras.</p>
+        <p>Trabajamos con HP, Epson, Canon y Brother, garantizando calidad, compatibilidad y durabilidad en cada producto. Nuestro equipo de técnicos certificados garantiza la mejor experiencia post-venta del mercado.</p>
+        <div class="mv-grid">
+          <div class="mv-card"><h4>Misión</h4><p>Proveer soluciones de impresión de alta calidad a precios justos, con el mejor servicio al cliente del mercado dominicano.</p></div>
+          <div class="mv-card"><h4>Visión</h4><p>Ser la empresa de referencia en impresión en el Caribe, expandiendo nuestro liderazgo en toda la región.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contacto">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="sec-tag" style="background:rgba(233,30,99,.2);color:#F06292;">Contacto</div>
+      <h2 class="sec-title">¿Necesitas ayuda? Escríbenos</h2>
+      <p class="sec-sub">Estamos listos para atenderte. Respuesta garantizada en menos de 24 horas.</p>
+    </div>
+    <div class="con-grid">
+      <div class="con-info rv">
+        <div class="con-item"><div class="con-icon">📍</div><div><h4>Dirección</h4><p>Av. Winston Churchill #123, Piantini<br>Santo Domingo, República Dominicana</p></div></div>
+        <div class="con-item"><div class="con-icon">📞</div><div><h4>Teléfono</h4><a href="tel:+18095550100">(809) 555-0100</a></div></div>
+        <div class="con-item"><div class="con-icon">💬</div><div><h4>WhatsApp</h4><a href="https://wa.me/18095550100" target="_blank">+1 (809) 555-0100</a></div></div>
+        <div class="con-item"><div class="con-icon">✉️</div><div><h4>Email</h4><a href="mailto:info@tonerprint.com.do">info@tonerprint.com.do</a></div></div>
+        <div class="con-item"><div class="con-icon">🕐</div><div><h4>Horario</h4><p>Lun–Vie: 8:00am – 6:00pm · Sáb: 9:00am – 2:00pm</p></div></div>
+        <div class="map-wrap">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15123.5!2d-69.9312!3d18.4861!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf89f3b0000001%3A0x1!2sPiantini%2C%20Santo%20Domingo!5e0!3m2!1ses!2sdo!4v1" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+      <div class="rv">
+        <form class="dark-form" onsubmit="handleContact(event)">
+          <div class="f-row">
+            <div class="form-g"><label>Nombre *</label><input type="text" placeholder="Tu nombre completo" required></div>
+            <div class="form-g"><label>Teléfono</label><input type="tel" placeholder="(809) 000-0000"></div>
+          </div>
+          <div class="form-g"><label>Email *</label><input type="email" placeholder="tu@email.com" required></div>
+          <div class="form-g"><label>Asunto</label><input type="text" placeholder="¿En qué podemos ayudarte?"></div>
+          <div class="form-g"><label>Mensaje *</label><textarea rows="5" placeholder="Describe tu consulta o pedido…" required></textarea></div>
+          <button type="submit" class="co-submit">📩 Enviar mensaje</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-grid">
+    <div class="ft-brand">
+      <div class="logo">Toner<span>Print</span></div>
+      <p>La empresa líder en soluciones de impresión en República Dominicana. Calidad, precio y servicio en un solo lugar desde 2009.</p>
+      <div class="social-links">
+        <a class="soc" href="#" title="Facebook">f</a>
+        <a class="soc" href="#" title="Instagram">📷</a>
+        <a class="soc" href="https://wa.me/18095550100" target="_blank" title="WhatsApp">💬</a>
+        <a class="soc" href="#" title="YouTube">▶</a>
+      </div>
+    </div>
+    <div class="ft-col"><h4>Productos</h4><ul><li><a href="#catalogo">Tóneres</a></li><li><a href="#catalogo">Tintas</a></li><li><a href="#catalogo">Impresoras</a></li><li><a href="#catalogo">Accesorios</a></li><li><a href="#catalogo">Ofertas</a></li></ul></div>
+    <div class="ft-col"><h4>Empresa</h4><ul><li><a href="#nosotros">Sobre nosotros</a></li><li><a href="#servicios">Servicios</a></li><li><a href="#testimonios">Testimonios</a></li><li><a href="#contacto">Contacto</a></li></ul></div>
+    <div class="ft-col"><h4>Soporte</h4><ul><li><a href="#">Seguimiento de pedido</a></li><li><a href="#">Política de devolución</a></li><li><a href="#">Garantía</a></li><li><a href="#">Preguntas frecuentes</a></li><li><a href="#">Términos y condiciones</a></li></ul></div>
+  </div>
+  <div class="ft-bottom">
+    <p>© 2024 TonerPrint. Todos los derechos reservados. Santo Domingo, República Dominicana.</p>
+    <p>Diseñado con ❤️ en RD</p>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a class="wa-btn" href="https://wa.me/18095550100" target="_blank" title="Chatea por WhatsApp">💬</a>
+
+<!-- CART SIDEBAR OVERLAY -->
+<div class="s-overlay" id="sOv" onclick="toggleCart()"></div>
+
+<!-- CART SIDEBAR -->
+<div class="cart-side" id="cartSide">
+  <div class="c-head"><h3>🛒 Mi carrito</h3><button class="m-close" onclick="toggleCart()">✕</button></div>
+  <div class="c-items" id="cItems"></div>
+  <div class="c-foot">
+    <div class="c-total"><span>Total</span><span id="cTotal">RD$0</span></div>
+    <button class="c-checkout" onclick="openCheckout()">💳 Finalizar compra</button>
+  </div>
+</div>
+
+<!-- PRODUCT MODAL -->
+<div class="overlay" id="prodModal">
+  <div class="modal">
+    <div class="m-head"><h3 id="mTitle">Detalle del producto</h3><button class="m-close" onclick="closeProdModal()">✕</button></div>
+    <div class="m-body">
+      <div class="m-img" id="mImg"></div>
+      <div>
+        <div class="m-brand" id="mBrand"></div>
+        <div class="m-name" id="mName"></div>
+        <div class="m-price" id="mPrice"></div>
+        <div class="m-avail">✅ En stock — Listo para envío</div>
+        <div class="m-desc" id="mDesc"></div>
+        <div class="m-specs" id="mSpecs"></div>
+        <div class="qty-wrap">
+          <button class="qty-btn" onclick="chQty(-1)">−</button>
+          <span class="qty-val" id="mQty">1</span>
+          <button class="qty-btn" onclick="chQty(1)">+</button>
+          <span style="font-size:.75rem;color:#999;">unidades</span>
+        </div>
+        <button class="m-add-btn" onclick="addFromModal()">🛒 Agregar al carrito</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CHECKOUT MODAL -->
+<div class="overlay" id="coModal">
+  <div class="modal co-modal">
+    <div class="m-head"><h3>💳 Finalizar compra</h3><button class="m-close" onclick="closeCo()">✕</button></div>
+    <div id="coForm" style="padding:22px;">
+      <div class="f-row">
+        <div class="form-g"><label>Nombre completo *</label><input id="coName" type="text" placeholder="Juan Pérez" required></div>
+        <div class="form-g"><label>Teléfono *</label><input id="coPhone" type="tel" placeholder="(809) 000-0000" required></div>
+      </div>
+      <div class="form-g"><label>Email *</label><input id="coEmail" type="email" placeholder="juan@email.com" required></div>
+      <div class="form-g"><label>Dirección de entrega *</label><input id="coAddr" type="text" placeholder="Calle, número, sector, ciudad" required></div>
+      <div class="form-g"><label>Notas adicionales</label><textarea id="coNotes" rows="2" placeholder="Instrucciones especiales de entrega…"></textarea></div>
+      <div class="form-g">
+        <label>Método de pago *</label>
+        <div class="pay-grid">
+          <div class="pay-opt sel" onclick="selPay(this,'card')"><div class="pi">💳</div><div class="pl">Tarjeta</div></div>
+          <div class="pay-opt" onclick="selPay(this,'transfer')"><div class="pi">🏦</div><div class="pl">Transferencia</div></div>
+          <div class="pay-opt" onclick="selPay(this,'delivery')"><div class="pi">📦</div><div class="pl">Contra entrega</div></div>
+        </div>
+      </div>
+      <div style="background:var(--light);border-radius:12px;padding:15px;margin-bottom:18px;">
+        <div style="display:flex;justify-content:space-between;font-size:.82rem;color:#777;margin-bottom:7px;"><span>Subtotal</span><span id="coSub">RD$0</span></div>
+        <div style="display:flex;justify-content:space-between;font-size:.82rem;color:#777;margin-bottom:7px;"><span>Envío</span><span style="color:#2e7d32;font-weight:700;">GRATIS</span></div>
+        <div style="display:flex;justify-content:space-between;font-weight:900;font-size:1.05rem;border-top:1px solid #ddd;padding-top:8px;margin-top:8px;"><span>Total</span><span id="coTot" style="color:var(--pink);">RD$0</span></div>
+      </div>
+      <button class="co-submit" onclick="submitOrder()">✅ Confirmar pedido</button>
+    </div>
+    <div class="order-ok" id="ordOk">
+      <div class="ok-icon">🎉</div>
+      <h3 style="font-size:1.35rem;font-weight:900;color:var(--black);margin-bottom:11px;">¡Pedido confirmado!</h3>
+      <p style="color:#666;margin-bottom:7px;">Tu pedido fue recibido exitosamente.</p>
+      <p style="color:#666;margin-bottom:22px;">Nuestro equipo te contactará en breve para confirmar los detalles de entrega.</p>
+      <p style="font-size:.8rem;color:#888;">Número de pedido: <strong id="ordNum" style="color:var(--pink);">#TP-00001</strong></p>
+      <button onclick="closeCo();clearCart();" class="btn-p" style="margin-top:22px;">🏠 Seguir comprando</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ─── DATA ───
+const products = [
+  {id:1,name:'Tóner HP 85A Negro CE285A',brand:'hp',type:'toner',price:1850,old:2200,icon:'🖨️',badge:'sale',desc:'Tóner original HP 85A para LaserJet P1102, P1102w, M1132, M1212nf. Impresión profesional con rendimiento de hasta 1,600 páginas.',specs:[['Modelo','CE285A'],['Rendimiento','1,600 págs.'],['Color','Negro'],['Compatible','HP P1102, M1212']]},
+  {id:2,name:'Tinta Epson T664 Pack 4 Colores',brand:'epson',type:'tinta',price:890,old:null,icon:'🎨',badge:'hot',desc:'Pack original Epson T664 para L100, L200, L300, L355, L550. Alta calidad y durabilidad en cada impresión a color.',specs:[['Modelo','T664120-BCS'],['Contenido','70ml c/u'],['Colores','C, M, Y, K'],['Páginas','~4,500 (negro)']]},
+  {id:3,name:'Impresora Canon PIXMA MG2510',brand:'canon',type:'impresora',price:4500,old:5200,icon:'🖨️',badge:'sale',desc:'Impresora multifunción Canon PIXMA MG2510 para uso doméstico y oficinas pequeñas. Imprime, copia y escanea.',specs:[['Tipo','Inyección de tinta'],['Resolución','4800×600 dpi'],['Velocidad','8 ppm (negro)'],['Conectividad','USB']]},
+  {id:4,name:'Tóner Brother TN-760 Negro',brand:'brother',type:'toner',price:2100,old:null,icon:'💼',badge:'new',desc:'Tóner original Brother TN-760 alta capacidad para DCP-L2550DW, HL-L2350DW, MFC-L2710DW. Impresión nítida.',specs:[['Modelo','TN-760'],['Rendimiento','3,000 págs.'],['Color','Negro'],['Compatible','HL-L2350DW, MFC-L2710DW']]},
+  {id:5,name:'Tinta HP 664 Negra F6V29AL',brand:'hp',type:'tinta',price:420,old:520,icon:'🖊️',badge:'sale',desc:'Cartucho original HP 664 negro para DeskJet 1115, 2135, 3635, 3835. Calidad HP garantizada en cada impresión.',specs:[['Modelo','F6V29AL'],['Contenido','2ml'],['Páginas','~120 págs.'],['Compatible','HP DeskJet 664']]},
+  {id:6,name:'Impresora Epson EcoTank L3150',brand:'epson',type:'impresora',price:8900,old:10500,icon:'🖨️',badge:'sale',desc:'Multifunción Epson EcoTank L3150 con WiFi y sistema de tinta integrado. Ahorra hasta 90% en costos de impresión.',specs:[['Tipo','EcoTank (tinta)'],['Resolución','5760×1440 dpi'],['WiFi','Sí'],['Funciones','Imprimir, Copiar, Escanear']]},
+  {id:7,name:'Tóner HP 26A CF226A Negro',brand:'hp',type:'toner',price:2750,old:null,icon:'🖨️',badge:null,desc:'Tóner original HP 26A para LaserJet Pro M402, MFP M426. Impresión profesional en blanco y negro de alta calidad.',specs:[['Modelo','CF226A'],['Rendimiento','3,100 págs.'],['Color','Negro'],['Compatible','HP M402, M426']]},
+  {id:8,name:'Impresora HP LaserJet M15w WiFi',brand:'hp',type:'impresora',price:5800,old:6500,icon:'🖨️',badge:'sale',desc:'Impresora HP LaserJet Pro M15w inalámbrica ultra compacta. Ideal para hogar y oficina pequeña con impresión WiFi.',specs:[['Tipo','Láser monocromática'],['Velocidad','19 ppm'],['WiFi','Sí'],['Memoria','8MB']]},
+  {id:9,name:'Tinta Canon PG-745 Negra',brand:'canon',type:'tinta',price:650,old:780,icon:'🎯',badge:'sale',desc:'Cartucho original Canon PG-745 para PIXMA MG2470, MG2570, MG2970, MX497, IP2870. Texto nítido y duradero.',specs:[['Modelo','PG-745'],['Contenido','9ml'],['Páginas','~180 págs.'],['Color','Negro']]},
+  {id:10,name:'Drum Brother DR-730',brand:'brother',type:'accesorio',price:1900,old:null,icon:'⚙️',badge:'new',desc:'Unidad de tambor original Brother DR-730. Máximo rendimiento para impresoras HL-L2350DW, DCP-L2550DW, MFC-L2710DW.',specs:[['Modelo','DR-730'],['Rendimiento','12,000 págs.'],['Compatible','Brother L2300 Series'],['Tipo','Unidad de drum']]},
+  {id:11,name:'Cable USB 2.0 para Impresora 1.8m',brand:'hp',type:'accesorio',price:180,old:null,icon:'🔌',badge:null,desc:'Cable USB tipo A-B de 1.8 m para impresoras. Compatible con HP, Epson, Canon y Brother. Cobre de alta pureza.',specs:[['Longitud','1.8 metros'],['Tipo','USB-A a USB-B'],['Velocidad','USB 2.0'],['Material','Cobre puro']]},
+  {id:12,name:'Tóner Canon 104 Negro ImageClass',brand:'canon',type:'toner',price:1600,old:1950,icon:'🖨️',badge:'sale',desc:'Tóner original Canon 104 para ImageClass MF4010, MF4012, MF4150, MF4270, MF4350D, D420, D480. Alta calidad.',specs:[['Modelo','FX-9/FX-10/104'],['Rendimiento','2,000 págs.'],['Color','Negro'],['Series','ImageClass MF4000']]},
+];
+
+const testimonials = [
+  {name:'María Rodríguez',role:'Gerente de Oficina, BancoCard RD',text:'Llevamos 3 años comprando en TonerPrint. La calidad de sus tóneres es excelente y siempre cumplen con los tiempos de entrega. ¡Altamente recomendados!',stars:5,ini:'M'},
+  {name:'Carlos Mejía',role:'Contador, Estudio Mejía & Asoc.',text:'Encontré los mejores precios en tintas Epson aquí. El servicio al cliente es de primera y el soporte técnico resolvió mi problema el mismo día.',stars:5,ini:'C'},
+  {name:'Ana Fernández',role:'Propietaria, Copy Center Ana',text:'Compro tóneres al por mayor para mi centro de copiado. Siempre tienen stock, precios competitivos y el crédito que ofrecen es una gran ventaja.',stars:5,ini:'A'},
+  {name:'Jorge Santos',role:'Director TI, Grupo Empresarial S.',text:'Mantenemos todas nuestras impresoras con insumos de TonerPrint. El plan de mantenimiento preventivo nos ha ahorrado mucho dinero.',stars:4,ini:'J'},
+  {name:'Lucía Peralta',role:'Docente, Colegio San Miguel',text:'Compré una impresora para uso personal y quedé fascinada con el precio y la atención. El técnico me explicó todo perfectamente.',stars:5,ini:'L'},
+  {name:'Roberto Guzmán',role:'Abogado, Bufete Guzmán & Asoc.',text:'Excelente experiencia de compra online. Los productos llegaron perfectamente embalados en tiempo récord. La factura fiscal llegó por email.',stars:5,ini:'R'},
+];
+
+// ─── STATE ───
+let cart = [];
+let curProd = null;
+let curQty = 1;
+let selPayment = 'card';
+let filters = {brand:null,type:null,search:''};
+
+// ─── RENDER PRODUCTS ───
+function getFiltered(){
+  return products.filter(p=>{
+    const b = !filters.brand || p.brand===filters.brand;
+    const t = !filters.type  || p.type===filters.type;
+    const s = !filters.search || p.name.toLowerCase().includes(filters.search.toLowerCase()) || p.brand.toLowerCase().includes(filters.search.toLowerCase());
+    return b&&t&&s;
+  });
+}
+
+function typeLabel(t){return{toner:'Tóner',tinta:'Tinta / Cartucho',impresora:'Impresora',accesorio:'Accesorio'}[t]||t;}
+
+function renderProds(list){
+  const g = document.getElementById('prodGrid');
+  if(!list.length){g.innerHTML='<div class="no-res">😔 No se encontraron productos con esos filtros.</div>';return;}
+  g.innerHTML = list.map(p=>`
+    <div class="prod-card rv" onclick="openProd(${p.id})">
+      ${p.badge?`<div class="p-badge ${p.badge}">${{sale:'% OFERTA',hot:'🔥 HOT',new:'🆕 NUEVO'}[p.badge]}</div>`:''}
+      <div class="p-img">${p.icon}</div>
+      <div class="p-info">
+        <div class="p-brand">${p.brand.toUpperCase()}</div>
+        <div class="p-name">${p.name}</div>
+        <div class="p-type">${typeLabel(p.type)}</div>
+        <div class="p-foot">
+          <div class="p-price">
+            ${p.old?`<span class="old">RD$${p.old.toLocaleString()}</span>`:''}
+            <span class="cur">RD$</span>${p.price.toLocaleString()}
+          </div>
+          <button class="add-btn" onclick="event.stopPropagation();addCart(${p.id})" title="Agregar">+</button>
+        </div>
+      </div>
+    </div>`).join('');
+  observeRv();
+}
+
+// ─── FILTERS ───
+function fAll(btn){
+  filters.brand=null;filters.type=null;
+  document.querySelectorAll('.fb').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderProds(getFiltered());
+}
+function fBrand(b,btn){
+  filters.brand = filters.brand===b?null:b;
+  document.querySelectorAll('#bFilters .fb').forEach(x=>x.classList.remove('active'));
+  if(filters.brand) btn.classList.add('active');
+  renderProds(getFiltered());
+}
+function fType(t,btn){
+  filters.type = filters.type===t?null:t;
+  document.querySelectorAll('#tFilters .fb').forEach(x=>x.classList.remove('active'));
+  if(filters.type) btn.classList.add('active');
+  renderProds(getFiltered());
+}
+function doSearch(){
+  filters.search = document.getElementById('srch').value.trim();
+  renderProds(getFiltered());
+  if(filters.search) document.getElementById('catalogo').scrollIntoView({behavior:'smooth'});
+}
+document.getElementById('srch').addEventListener('keydown',e=>{if(e.key==='Enter')doSearch();});
+
+// ─── PRODUCT MODAL ───
+function openProd(id){
+  curProd = products.find(p=>p.id===id);
+  if(!curProd)return;
+  curQty=1;
+  document.getElementById('mQty').textContent=1;
+  document.getElementById('mImg').textContent=curProd.icon;
+  document.getElementById('mBrand').textContent=curProd.brand.toUpperCase();
+  document.getElementById('mName').textContent=curProd.name;
+  document.getElementById('mTitle').textContent=curProd.name;
+  document.getElementById('mPrice').textContent=`RD$${curProd.price.toLocaleString()}`;
+  document.getElementById('mDesc').textContent=curProd.desc;
+  document.getElementById('mSpecs').innerHTML=`<h4>Especificaciones técnicas</h4>${curProd.specs.map(s=>`<div class="spec-row"><span class="sl">${s[0]}</span><span class="sv">${s[1]}</span></div>`).join('')}`;
+  open('prodModal');
+}
+function closeProdModal(){close('prodModal');}
+function chQty(d){curQty=Math.max(1,curQty+d);document.getElementById('mQty').textContent=curQty;}
+function addFromModal(){
+  if(!curProd)return;
+  for(let i=0;i<curQty;i++)addCart(curProd.id,false);
+  toast(`✅ ${curQty}× ${curProd.name} agregado al carrito`);
+  updateCartUI();
+  closeProdModal();
+}
+
+// ─── CART ───
+function addCart(id,notif=true){
+  const p=products.find(x=>x.id===id);
+  if(!p)return;
+  const ex=cart.find(x=>x.id===id);
+  if(ex)ex.qty++;else cart.push({...p,qty:1});
+  updateCartUI();
+  if(notif)toast(`✅ ${p.name} agregado al carrito`);
+}
+function removeCart(id){cart=cart.filter(x=>x.id!==id);updateCartUI();}
+function clearCart(){cart=[];updateCartUI();}
+
+function updateCartUI(){
+  const total=cart.reduce((s,x)=>s+x.price*x.qty,0);
+  const items=cart.reduce((s,x)=>s+x.qty,0);
+  document.getElementById('cCount').textContent=items;
+  document.getElementById('cTotal').textContent=`RD$${total.toLocaleString()}`;
+  document.getElementById('coSub').textContent=`RD$${total.toLocaleString()}`;
+  document.getElementById('coTot').textContent=`RD$${total.toLocaleString()}`;
+  const el=document.getElementById('cItems');
+  if(!cart.length){
+    el.innerHTML='<div class="c-empty"><div class="ei">🛒</div><p>Tu carrito está vacío</p></div>';
+  }else{
+    el.innerHTML=cart.map(x=>`
+      <div class="c-item">
+        <div class="ci-img">${x.icon}</div>
+        <div class="ci-info">
+          <div class="ci-name">${x.name}</div>
+          <div class="ci-price">RD$${(x.price*x.qty).toLocaleString()} <span style="color:#bbb;font-weight:400;font-size:.72rem;">(${x.qty}× RD$${x.price.toLocaleString()})</span></div>
+        </div>
+        <button class="ci-rm" onclick="removeCart(${x.id})">✕</button>
+      </div>`).join('');
+  }
+}
+
+function toggleCart(){
+  document.getElementById('cartSide').classList.toggle('open');
+  document.getElementById('sOv').classList.toggle('open');
+  document.body.style.overflow=document.getElementById('cartSide').classList.contains('open')?'hidden':'';
+}
+
+// ─── CHECKOUT ───
+function openCheckout(){
+  toggleCart();
+  document.getElementById('coForm').style.display='block';
+  document.getElementById('ordOk').style.display='none';
+  open('coModal');
+}
+function closeCo(){close('coModal');}
+function selPay(el,method){
+  document.querySelectorAll('.pay-opt').forEach(o=>o.classList.remove('sel'));
+  el.classList.add('sel');selPayment=method;
+}
+function submitOrder(){
+  const n=document.getElementById('coName').value.trim();
+  const ph=document.getElementById('coPhone').value.trim();
+  const em=document.getElementById('coEmail').value.trim();
+  const ad=document.getElementById('coAddr').value.trim();
+  if(!n||!ph||!em||!ad){toast('⚠️ Completa todos los campos requeridos');return;}
+  document.getElementById('ordNum').textContent='#TP-'+String(Math.floor(Math.random()*90000)+10000);
+  document.getElementById('coForm').style.display='none';
+  document.getElementById('ordOk').style.display='block';
+}
+
+// ─── MODAL HELPERS ───
+function open(id){document.getElementById(id).classList.add('open');document.body.style.overflow='hidden';}
+function close(id){document.getElementById(id).classList.remove('open');document.body.style.overflow='';}
+document.getElementById('prodModal').addEventListener('click',function(e){if(e.target===this)closeProdModal();});
+document.getElementById('coModal').addEventListener('click',function(e){if(e.target===this)closeCo();});
+
+// ─── TOAST ───
+function toast(msg){
+  const w=document.getElementById('toasts');
+  const t=document.createElement('div');
+  t.className='toast';t.innerHTML=`<span class="toast-txt">${msg}</span>`;
+  w.appendChild(t);
+  setTimeout(()=>{t.classList.add('out');setTimeout(()=>t.remove(),300);},3000);
+}
+
+// ─── CONTACT ───
+function handleContact(e){e.preventDefault();toast('✅ Mensaje enviado. Te contactaremos pronto.');e.target.reset();}
+
+// ─── TESTIMONIALS ───
+function renderTes(){
+  document.getElementById('tesGrid').innerHTML=testimonials.map(t=>`
+    <div class="tes-card rv">
+      <div class="stars">${'★'.repeat(t.stars)}${'☆'.repeat(5-t.stars)}</div>
+      <div class="tes-txt">"${t.text}"</div>
+      <div class="tes-author">
+        <div class="t-avatar">${t.ini}</div>
+        <div><div class="t-name">${t.name}</div><div class="t-role">${t.role}</div></div>
+      </div>
+    </div>`).join('');
+  observeRv();
+}
+
+// ─── MOBILE MENU ───
+function toggleMenu(){document.getElementById('nav').classList.toggle('mob');}
+document.getElementById('nav').querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>document.getElementById('nav').classList.remove('mob')));
+
+// ─── SCROLL REVEAL ───
+function observeRv(){
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target);}});
+  },{threshold:.08});
+  document.querySelectorAll('.rv:not(.vis)').forEach(el=>obs.observe(el));
+}
+
+// ─── HEADER SCROLL ───
+window.addEventListener('scroll',()=>{
+  document.getElementById('hdr').style.background=window.scrollY>40?'rgba(13,13,13,.99)':'rgba(13,13,13,.96)';
+});
+
+// ─── INIT ───
+renderProds(products);
+renderTes();
+observeRv();
+</script>
+</body>
+</html>
