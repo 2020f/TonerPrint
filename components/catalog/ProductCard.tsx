@@ -66,16 +66,24 @@ export default function ProductCard({ product }: ProductCardProps) {
           </div>
         )}
 
-        {/* Emoji */}
-        <motion.span
-          className="text-7xl select-none filter drop-shadow-md"
-          whileHover={{ scale: 1.1, rotate: 5 }}
-          transition={{ type: 'spring', stiffness: 300 }}
-          role="img"
-          aria-label={product.name}
-        >
-          {product.emoji}
-        </motion.span>
+        {/* Imagen o Emoji */}
+        {product.imageUrl ? (
+          <img
+            src={product.imageUrl}
+            alt={product.name}
+            className="w-full h-full object-contain p-4"
+          />
+        ) : (
+          <motion.span
+            className="text-7xl select-none filter drop-shadow-md"
+            whileHover={{ scale: 1.1, rotate: 5 }}
+            transition={{ type: 'spring', stiffness: 300 }}
+            role="img"
+            aria-label={product.name}
+          >
+            {product.emoji}
+          </motion.span>
+        )}
 
         {/* Hover overlay */}
         <div className="absolute inset-0 bg-pink/0 group-hover:bg-pink/5 transition-colors duration-300" />
