@@ -44,13 +44,16 @@ export default function Footer() {
           {/* Brand column */}
           <div className="lg:col-span-2">
             <div className="mb-5">
-              <div className="inline-block bg-white rounded-2xl px-3 py-2 shadow-lg">
+              <div
+                className="inline-block px-5 py-3 rounded-2xl"
+                style={{ background: 'radial-gradient(ellipse at center, rgba(255,255,255,1) 40%, rgba(255,255,255,0.5) 70%, transparent 100%)' }}
+              >
                 <Image
                   src="/logo.png"
                   alt="TonerPrint"
-                  width={140}
-                  height={52}
-                  className="h-11 w-auto object-contain"
+                  width={160}
+                  height={60}
+                  className="h-14 w-auto object-contain"
                 />
               </div>
             </div>

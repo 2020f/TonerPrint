@@ -76,20 +76,25 @@ export default function Header() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+          <div className="flex items-center justify-between h-[68px]">
             {/* Logo */}
             <a
               href="#inicio"
               onClick={(e) => { e.preventDefault(); handleNavClick('#inicio') }}
               className="flex items-center group"
             >
-              <div className="bg-white rounded-xl px-2 py-1 shadow-md group-hover:scale-105 transition-transform">
+              <div
+                className="relative px-4 py-2 rounded-2xl group-hover:scale-105 transition-transform"
+                style={{
+                  background: 'radial-gradient(ellipse at center, rgba(255,255,255,1) 40%, rgba(255,255,255,0.5) 70%, transparent 100%)',
+                }}
+              >
                 <Image
                   src="/logo.png"
                   alt="TonerPrint"
-                  width={120}
-                  height={44}
-                  className="h-9 w-auto object-contain"
+                  width={160}
+                  height={60}
+                  className="h-12 w-auto object-contain relative z-10"
                   priority
                 />
               </div>
@@ -206,13 +211,16 @@ export default function Header() {
             />
             <div className="absolute right-0 top-0 bottom-0 w-72 bg-[#0D0D0D] border-l border-white/10 flex flex-col">
               <div className="flex items-center justify-between p-5 border-b border-white/10">
-                <div className="bg-white rounded-xl px-2 py-1">
+                <div
+                  className="px-4 py-2 rounded-2xl"
+                  style={{ background: 'radial-gradient(ellipse at center, rgba(255,255,255,1) 40%, rgba(255,255,255,0.5) 70%, transparent 100%)' }}
+                >
                   <Image
                     src="/logo.png"
                     alt="TonerPrint"
-                    width={100}
-                    height={36}
-                    className="h-8 w-auto object-contain"
+                    width={140}
+                    height={52}
+                    className="h-11 w-auto object-contain"
                   />
                 </div>
                 <button
@@ -257,7 +265,7 @@ export default function Header() {
       </AnimatePresence>
 
       {/* Spacer for fixed header */}
-      <div className="h-[calc(1.75rem+4rem)]" />
+      <div className="h-[calc(1.75rem+68px)]" />
     </>
   )
 }
