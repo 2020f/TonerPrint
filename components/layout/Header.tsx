@@ -89,7 +89,7 @@ export default function Header() {
                 width={220}
                 height={80}
                 className="w-40 sm:w-48 h-auto object-contain group-hover:scale-105 transition-transform"
-                style={{ filter: 'drop-shadow(0 0 10px rgba(255,255,255,0.7))' }}
+                style={{ filter: 'drop-shadow(0 0 6px rgba(255,255,255,1)) drop-shadow(0 0 14px rgba(255,255,255,0.9)) drop-shadow(0 0 28px rgba(255,255,255,0.6))' }}
                 priority
               />
             </a>

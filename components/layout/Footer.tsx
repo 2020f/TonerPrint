@@ -50,7 +50,7 @@ export default function Footer() {
                 width={240}
                 height={90}
                 className="w-52 h-auto object-contain"
-                style={{ filter: 'drop-shadow(0 0 12px rgba(255,255,255,0.5))' }}
+                style={{ filter: 'drop-shadow(0 0 6px rgba(255,255,255,1)) drop-shadow(0 0 14px rgba(255,255,255,0.9)) drop-shadow(0 0 28px rgba(255,255,255,0.6))' }}
               />
             </div>
             <p className="text-white/50 text-sm leading-relaxed mb-6 max-w-xs">
