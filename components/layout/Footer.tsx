@@ -44,18 +44,14 @@ export default function Footer() {
           {/* Brand column */}
           <div className="lg:col-span-2">
             <div className="mb-5">
-              <div
-                className="inline-block px-6 py-4 rounded-3xl"
-                style={{ background: 'radial-gradient(ellipse at center, rgba(255,255,255,1) 50%, rgba(255,255,255,0.6) 75%, transparent 100%)', filter: 'drop-shadow(0 0 16px rgba(255,255,255,0.4))' }}
-              >
-                <Image
-                  src="/logo.png"
-                  alt="TonerPrint"
-                  width={240}
-                  height={90}
-                  className="w-52 h-auto object-contain"
-                />
-              </div>
+              <Image
+                src="/logo.png"
+                alt="TonerPrint"
+                width={240}
+                height={90}
+                className="w-52 h-auto object-contain"
+                style={{ filter: 'drop-shadow(0 0 12px rgba(255,255,255,0.5))' }}
+              />
             </div>
             <p className="text-white/50 text-sm leading-relaxed mb-6 max-w-xs">
               Tu tienda de confianza para insumos de impresión en Santo Domingo. Tóneres, tintas e impresoras originales a los mejores precios del mercado dominicano.

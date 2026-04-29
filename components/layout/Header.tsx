@@ -83,22 +83,15 @@ export default function Header() {
               onClick={(e) => { e.preventDefault(); handleNavClick('#inicio') }}
               className="flex items-center group"
             >
-              <div
-                className="px-6 py-3 rounded-3xl group-hover:scale-105 transition-transform"
-                style={{
-                  background: 'radial-gradient(ellipse at center, rgba(255,255,255,1) 50%, rgba(255,255,255,0.6) 75%, transparent 100%)',
-                  filter: 'drop-shadow(0 0 12px rgba(255,255,255,0.5))',
-                }}
-              >
-                <Image
-                  src="/logo.png"
-                  alt="TonerPrint"
-                  width={220}
-                  height={80}
-                  className="w-44 sm:w-52 h-auto object-contain"
-                  priority
-                />
-              </div>
+              <Image
+                src="/logo.png"
+                alt="TonerPrint"
+                width={220}
+                height={80}
+                className="w-40 sm:w-48 h-auto object-contain group-hover:scale-105 transition-transform"
+                style={{ filter: 'drop-shadow(0 0 10px rgba(255,255,255,0.7))' }}
+                priority
+              />
             </a>
 
             {/* Desktop Nav */}
@@ -212,18 +205,14 @@ export default function Header() {
             />
             <div className="absolute right-0 top-0 bottom-0 w-72 bg-[#0D0D0D] border-l border-white/10 flex flex-col">
               <div className="flex items-center justify-between p-5 border-b border-white/10">
-                <div
-                  className="px-5 py-2 rounded-2xl"
-                  style={{ background: 'radial-gradient(ellipse at center, rgba(255,255,255,1) 50%, rgba(255,255,255,0.6) 75%, transparent 100%)' }}
-                >
-                  <Image
-                    src="/logo.png"
-                    alt="TonerPrint"
-                    width={180}
-                    height={66}
-                    className="w-40 h-auto object-contain"
-                  />
-                </div>
+                <Image
+                  src="/logo.png"
+                  alt="TonerPrint"
+                  width={180}
+                  height={66}
+                  className="w-40 h-auto object-contain"
+                  style={{ filter: 'drop-shadow(0 0 6px rgba(255,255,255,0.5))' }}
+                />
                 <button
                   onClick={() => setMobileOpen(false)}
                   className="text-white/60 hover:text-white p-1.5 rounded-lg hover:bg-white/10"
