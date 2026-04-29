@@ -17,6 +17,15 @@ export default async function AdminLayout({ children }: { children: React.ReactN
         <main className="flex-1 p-6 overflow-auto">
           {children}
         </main>
+        {/* Admin footer */}
+        <footer className="border-t border-gray-200 bg-white px-6 py-3 flex items-center justify-between">
+          <p className="text-gray-400 text-xs">
+            © {new Date().getFullYear()} TonerPrint — Panel Administrativo
+          </p>
+          <p className="text-gray-300 text-xs">
+            v1.0.0
+          </p>
+        </footer>
       </div>
     </div>
   );

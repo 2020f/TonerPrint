@@ -1,12 +1,6 @@
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 import './globals.css'
-import Header from '@/components/layout/Header'
-import Footer from '@/components/layout/Footer'
-import WhatsAppFAB from '@/components/layout/WhatsAppFAB'
-import CartSidebar from '@/components/cart/CartSidebar'
-import CheckoutModal from '@/components/checkout/CheckoutModal'
-import ProductModal from '@/components/catalog/ProductModal'
 import ToastProvider from '@/components/ui/ToastProvider'
 
 const poppins = Poppins({
@@ -40,22 +34,12 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es" className={poppins.variable}>
       <body className="font-poppins antialiased">
         <ToastProvider>
-          <Header />
-          <main>{children}</main>
-          <Footer />
-          <CartSidebar />
-          <CheckoutModal />
-          <ProductModal />
-          <WhatsAppFAB />
+          {children}
         </ToastProvider>
       </body>
     </html>
