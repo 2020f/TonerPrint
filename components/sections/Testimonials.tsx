@@ -53,7 +53,7 @@ export default function Testimonials() {
           </p>
 
           {/* Overall rating */}
-          <div className="flex items-center justify-center gap-3 mt-6">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mt-6">
             <div className="flex gap-1">
               {[1, 2, 3, 4, 5].map((i) => (
                 <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />

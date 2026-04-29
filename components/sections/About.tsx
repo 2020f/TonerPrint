@@ -81,11 +81,11 @@ export default function About() {
                 </div>
 
                 {/* Stats grid */}
-                <div className="grid grid-cols-2 gap-4 mb-8">
+                <div className="grid grid-cols-2 gap-3 mb-8">
                   {stats.map(({ value, label, icon: Icon }) => (
                     <div
                       key={label}
-                      className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl p-5 hover:bg-white/15 transition-colors"
+                      className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl p-4 sm:p-5 hover:bg-white/15 transition-colors"
                     >
                       <Icon className="w-5 h-5 text-white/70 mb-3" />
                       <p className="text-white font-bold text-3xl leading-none">{value}</p>

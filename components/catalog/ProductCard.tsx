@@ -51,7 +51,7 @@ export default function ProductCard({ product }: ProductCardProps) {
       className="bg-white rounded-2xl shadow-sm hover:shadow-xl hover:shadow-pink/10 border border-gray-100 overflow-hidden cursor-pointer group transition-shadow duration-300"
     >
       {/* Product image area */}
-      <div className="relative bg-gradient-to-br from-gray-50 to-gray-100 h-44 flex items-center justify-center overflow-hidden">
+      <div className="relative bg-gradient-to-br from-gray-50 to-gray-100 h-36 sm:h-44 flex items-center justify-center overflow-hidden">
         {/* Badge */}
         {product.badge && (
           <div className={`absolute top-3 left-3 text-[10px] font-bold px-2 py-1 rounded-lg z-10 ${badgeConfig[product.badge].className}`}>
@@ -90,14 +90,14 @@ export default function ProductCard({ product }: ProductCardProps) {
       </div>
 
       {/* Content */}
-      <div className="p-4">
+      <div className="p-3 sm:p-4">
         {/* Brand */}
         <p className={`text-[10px] font-bold uppercase tracking-widest mb-1 ${brandColors[product.brand] || 'text-pink'}`}>
           {product.brand.toUpperCase()}
         </p>
 
         {/* Name */}
-        <h3 className="text-dark font-semibold text-sm leading-snug mb-1.5 group-hover:text-pink transition-colors line-clamp-2">
+        <h3 className="text-dark font-semibold text-xs sm:text-sm leading-snug mb-1.5 group-hover:text-pink transition-colors line-clamp-2">
           {product.name}
         </h3>
 
@@ -109,7 +109,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         {/* Price row */}
         <div className="flex items-center justify-between">
           <div className="flex flex-col">
-            <span className="text-lg font-bold text-dark leading-none">
+            <span className="text-base sm:text-lg font-bold text-dark leading-none">
               RD${product.price.toLocaleString('es-DO')}
             </span>
             {product.oldPrice && (

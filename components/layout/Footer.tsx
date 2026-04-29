@@ -197,8 +197,8 @@ export default function Footer() {
           <p className="text-white/30 text-xs">
             © {new Date().getFullYear()} TonerPrint. Todos los derechos reservados.
           </p>
-          <div className="flex items-center gap-2">
-            <span className="text-white/25 text-xs mr-1">Pagos:</span>
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-2">
+            <span className="text-white/25 text-xs w-full sm:w-auto text-center sm:text-left sm:mr-1">Pagos:</span>
             {['💳 Visa', '💳 Mastercard', '🏦 Transferencia', '🚚 Contra entrega'].map((m) => (
               <span key={m} className="text-white/30 text-xs bg-white/5 px-2.5 py-1 rounded border border-white/5">
                 {m}

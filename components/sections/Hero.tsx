@@ -97,7 +97,6 @@ export default function Hero() {
               >
                 impresión
               </span>{' '}
-              <br />
               al mejor{' '}
               <span className="relative">
                 precio
@@ -165,9 +164,9 @@ export default function Hero() {
             className="relative flex items-center justify-center"
           >
             {/* Main card */}
-            <div className="relative w-full max-w-sm mx-auto">
+            <div className="relative w-full max-w-sm mx-auto pt-8 pb-16 sm:pt-0 sm:pb-0">
               <div
-                className="relative bg-gradient-to-br from-white/10 to-white/5 border border-white/15 rounded-3xl p-10 flex flex-col items-center justify-center gap-6 overflow-hidden"
+                className="relative bg-gradient-to-br from-white/10 to-white/5 border border-white/15 rounded-3xl p-6 sm:p-10 flex flex-col items-center justify-center gap-6 overflow-hidden"
                 style={{ boxShadow: '0 25px 60px rgba(233,30,99,0.15), 0 0 0 1px rgba(255,255,255,0.05)' }}
               >
                 {/* Background glow inside card */}
@@ -177,7 +176,7 @@ export default function Hero() {
                 <motion.div
                   animate={{ y: [0, -10, 0] }}
                   transition={{ repeat: Infinity, duration: 3.5, ease: 'easeInOut' }}
-                  className="text-[100px] select-none filter drop-shadow-2xl"
+                  className="text-[80px] sm:text-[100px] select-none filter drop-shadow-2xl"
                   role="img"
                   aria-label="Impresora"
                 >
@@ -185,7 +184,7 @@ export default function Hero() {
                 </motion.div>
 
                 {/* Brand logos row */}
-                <div className="flex items-center gap-4">
+                <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4">
                   {['HP', 'Epson', 'Canon', 'Brother'].map((brand) => (
                     <div
                       key={brand}
@@ -209,7 +208,7 @@ export default function Hero() {
               <motion.div
                 animate={{ y: [0, -8, 0] }}
                 transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut', delay: 0.5 }}
-                className="absolute -left-10 top-8 bg-[#0D0D0D] border border-white/15 rounded-2xl px-4 py-3 shadow-2xl"
+                className="absolute left-0 sm:-left-10 top-10 sm:top-8 bg-[#0D0D0D] border border-white/15 rounded-2xl px-4 py-3 shadow-2xl"
                 style={{ boxShadow: '0 10px 30px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.05)' }}
               >
                 <p className="text-2xl font-bold text-white">5,000+</p>
@@ -225,7 +224,7 @@ export default function Hero() {
               <motion.div
                 animate={{ y: [0, -10, 0] }}
                 transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut', delay: 1.2 }}
-                className="absolute -right-8 bottom-12 bg-gradient-to-br from-pink to-pink2 rounded-2xl px-4 py-3 shadow-2xl"
+                className="absolute right-0 sm:-right-8 bottom-18 sm:bottom-12 bg-gradient-to-br from-pink to-pink2 rounded-2xl px-4 py-3 shadow-2xl"
                 style={{ boxShadow: '0 10px 30px rgba(233,30,99,0.4)' }}
               >
                 <p className="text-2xl font-bold text-white">99%</p>
@@ -240,7 +239,7 @@ export default function Hero() {
               <motion.div
                 animate={{ y: [0, -6, 0] }}
                 transition={{ repeat: Infinity, duration: 3.8, ease: 'easeInOut', delay: 2 }}
-                className="absolute -top-4 right-6 bg-[#1a1a1a] border border-white/10 rounded-xl px-3 py-2 shadow-xl"
+                className="absolute top-0 sm:-top-4 right-6 bg-[#1a1a1a] border border-white/10 rounded-xl px-3 py-2 shadow-xl"
               >
                 <div className="flex items-center gap-2">
                   <Truck className="w-3.5 h-3.5 text-green-400" />
