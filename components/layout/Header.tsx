@@ -2,7 +2,8 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ShoppingCart, Search, Menu, X, Printer, Phone, ChevronDown } from 'lucide-react'
+import { ShoppingCart, Search, Menu, X, Phone, ChevronDown } from 'lucide-react'
+import Image from 'next/image'
 import { useCartStore } from '@/lib/store/cartStore'
 import { useUIStore } from '@/lib/store/uiStore'
 
@@ -80,18 +81,17 @@ export default function Header() {
             <a
               href="#inicio"
               onClick={(e) => { e.preventDefault(); handleNavClick('#inicio') }}
-              className="flex items-center gap-2.5 group"
+              className="flex items-center group"
             >
-              <div className="w-9 h-9 bg-pink rounded-lg flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
-                <Printer className="w-5 h-5 text-white" />
-              </div>
-              <div className="flex flex-col leading-none">
-                <span className="text-white font-bold text-lg tracking-tight">
-                  Toner<span className="text-pink">Print</span>
-                </span>
-                <span className="text-white/40 text-[9px] uppercase tracking-widest font-medium">
-                  República Dominicana
-                </span>
+              <div className="bg-white rounded-xl px-2 py-1 shadow-md group-hover:scale-105 transition-transform">
+                <Image
+                  src="/logo.png"
+                  alt="TonerPrint"
+                  width={120}
+                  height={44}
+                  className="h-9 w-auto object-contain"
+                  priority
+                />
               </div>
             </a>
 
@@ -206,11 +206,14 @@ export default function Header() {
             />
             <div className="absolute right-0 top-0 bottom-0 w-72 bg-[#0D0D0D] border-l border-white/10 flex flex-col">
               <div className="flex items-center justify-between p-5 border-b border-white/10">
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 bg-pink rounded-lg flex items-center justify-center">
-                    <Printer className="w-4 h-4 text-white" />
-                  </div>
-                  <span className="text-white font-bold">TonerPrint</span>
+                <div className="bg-white rounded-xl px-2 py-1">
+                  <Image
+                    src="/logo.png"
+                    alt="TonerPrint"
+                    width={100}
+                    height={36}
+                    className="h-8 w-auto object-contain"
+                  />
                 </div>
                 <button
                   onClick={() => setMobileOpen(false)}
