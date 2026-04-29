@@ -45,15 +45,15 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <div className="mb-5">
               <div
-                className="inline-block px-5 py-3 rounded-2xl"
-                style={{ background: 'radial-gradient(ellipse at center, rgba(255,255,255,1) 40%, rgba(255,255,255,0.5) 70%, transparent 100%)' }}
+                className="inline-block px-6 py-4 rounded-3xl"
+                style={{ background: 'radial-gradient(ellipse at center, rgba(255,255,255,1) 50%, rgba(255,255,255,0.6) 75%, transparent 100%)', filter: 'drop-shadow(0 0 16px rgba(255,255,255,0.4))' }}
               >
                 <Image
                   src="/logo.png"
                   alt="TonerPrint"
-                  width={160}
-                  height={60}
-                  className="h-14 w-auto object-contain"
+                  width={240}
+                  height={90}
+                  className="w-52 h-auto object-contain"
                 />
               </div>
             </div>

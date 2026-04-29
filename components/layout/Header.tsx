@@ -76,7 +76,7 @@ export default function Header() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-[68px]">
+          <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <a
               href="#inicio"
@@ -84,17 +84,18 @@ export default function Header() {
               className="flex items-center group"
             >
               <div
-                className="relative px-4 py-2 rounded-2xl group-hover:scale-105 transition-transform"
+                className="px-6 py-3 rounded-3xl group-hover:scale-105 transition-transform"
                 style={{
-                  background: 'radial-gradient(ellipse at center, rgba(255,255,255,1) 40%, rgba(255,255,255,0.5) 70%, transparent 100%)',
+                  background: 'radial-gradient(ellipse at center, rgba(255,255,255,1) 50%, rgba(255,255,255,0.6) 75%, transparent 100%)',
+                  filter: 'drop-shadow(0 0 12px rgba(255,255,255,0.5))',
                 }}
               >
                 <Image
                   src="/logo.png"
                   alt="TonerPrint"
-                  width={160}
-                  height={60}
-                  className="h-12 w-auto object-contain relative z-10"
+                  width={220}
+                  height={80}
+                  className="w-44 sm:w-52 h-auto object-contain"
                   priority
                 />
               </div>
@@ -212,15 +213,15 @@ export default function Header() {
             <div className="absolute right-0 top-0 bottom-0 w-72 bg-[#0D0D0D] border-l border-white/10 flex flex-col">
               <div className="flex items-center justify-between p-5 border-b border-white/10">
                 <div
-                  className="px-4 py-2 rounded-2xl"
-                  style={{ background: 'radial-gradient(ellipse at center, rgba(255,255,255,1) 40%, rgba(255,255,255,0.5) 70%, transparent 100%)' }}
+                  className="px-5 py-2 rounded-2xl"
+                  style={{ background: 'radial-gradient(ellipse at center, rgba(255,255,255,1) 50%, rgba(255,255,255,0.6) 75%, transparent 100%)' }}
                 >
                   <Image
                     src="/logo.png"
                     alt="TonerPrint"
-                    width={140}
-                    height={52}
-                    className="h-11 w-auto object-contain"
+                    width={180}
+                    height={66}
+                    className="w-40 h-auto object-contain"
                   />
                 </div>
                 <button
@@ -265,7 +266,7 @@ export default function Header() {
       </AnimatePresence>
 
       {/* Spacer for fixed header */}
-      <div className="h-[calc(1.75rem+68px)]" />
+      <div className="h-[calc(1.75rem+5rem)]" />
     </>
   )
 }
