@@ -137,9 +137,17 @@ export default function CartSidebar() {
                         transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                         className="flex items-center gap-3 bg-gray-50 rounded-2xl p-3.5 border border-gray-100"
                       >
-                        {/* Emoji */}
-                        <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-3xl flex-shrink-0 shadow-sm border border-gray-100">
-                          {item.product.emoji}
+                        {/* Product image or emoji */}
+                        <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center flex-shrink-0 shadow-sm border border-gray-100 overflow-hidden">
+                          {item.product.imageUrl ? (
+                            <img
+                              src={item.product.imageUrl}
+                              alt={item.product.name}
+                              className="w-full h-full object-contain p-1"
+                            />
+                          ) : (
+                            <span className="text-3xl">{item.product.emoji}</span>
+                          )}
                         </div>
 
                         {/* Info */}

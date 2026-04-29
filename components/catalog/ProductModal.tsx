@@ -77,15 +77,23 @@ export default function ProductModal() {
                       {badgeConfig[selectedProduct.badge].label}
                     </div>
                   )}
-                  <motion.div
-                    animate={{ y: [0, -8, 0] }}
-                    transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
-                    className="text-[90px] select-none"
-                    role="img"
-                    aria-label={selectedProduct.name}
-                  >
-                    {selectedProduct.emoji}
-                  </motion.div>
+                  {selectedProduct.imageUrl ? (
+                    <img
+                      src={selectedProduct.imageUrl}
+                      alt={selectedProduct.name}
+                      className="w-40 h-40 object-contain"
+                    />
+                  ) : (
+                    <motion.div
+                      animate={{ y: [0, -8, 0] }}
+                      transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
+                      className="text-[90px] select-none"
+                      role="img"
+                      aria-label={selectedProduct.name}
+                    >
+                      {selectedProduct.emoji}
+                    </motion.div>
+                  )}
                   <div className="flex gap-1">
                     {[1, 2, 3, 4, 5].map((i) => (
                       <Star key={i} className="w-3.5 h-3.5 text-yellow-400 fill-yellow-400" />
