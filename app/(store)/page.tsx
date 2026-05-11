@@ -1,5 +1,5 @@
 import Hero from '@/components/sections/Hero'
-import PromoBanner from '@/components/sections/PromoBanner'
+import Categories from '@/components/sections/Categories'
 import Catalog from '@/components/sections/Catalog'
 import Services from '@/components/sections/Services'
 import Testimonials from '@/components/sections/Testimonials'
@@ -10,7 +10,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <PromoBanner />
+      <Categories />
       <Catalog />
       <Services />
       <Testimonials />
